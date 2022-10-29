@@ -94,6 +94,7 @@ class Spectrum:
         self._mode = mode
         self._gamma = min(max(gamma, 0), 3.0)
         self._index_granularity = (2**16) - 1  # maximum index granularity
+        self._index = 0  # set to default startup value
 
         # Select normal or "wavelength-of-light" -style spectrum
         if self._mode == "light":
@@ -118,10 +119,13 @@ class Spectrum:
 
     @property
     def mode(self):
+        """The spectrum mode: "light" or "continuous"."""
         return self._mode
 
     @property
     def gamma(self):
+        """Color intensity factor for human eye perception. Accepts a range of
+        values between 0.0 and 3.0."""
         return self._gamma
 
     @gamma.setter

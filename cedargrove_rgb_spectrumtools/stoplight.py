@@ -69,7 +69,8 @@ def index_to_rgb(index=0, gamma=0.5):
 
     band = index * 600  # an arbitrary spectrum band index; 0 to 600
 
-    if band >= 0 and band < 300:  # green to yellow
+    # if band >= 0 and band < 300:  # green to yellow
+    if 0 <= band < 300:  # green to yellow
         red = map_range(band, 0, 300, 0.0, 1) ** gamma
         grn = map_range(band, 0, 300, 0.25, 1) ** gamma
         blu = 0.0
