@@ -130,16 +130,17 @@ range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value can be from
 0.0 to 3.0 (inclusive); default is 0.55, tuned for TFT displays. If the index
 or gamma value is outside of the specified range, the 24-bit RGB output will be
 limited to the minimum (0x0) or maximum (0xFFFFFF) value.
+
 The class converts a spectrum index value consisting of a positive numeric
 value (0.0 to 1.0, modulus of 1.0) to an RGB color value that representing the
 index position on a graduated and blended multicolor spectrum. The spectrum is
 defined by a list of colors that are proportionally distributed across the spectrum.
 Two spectrum modes are currently supported:
-• "light" mode produces a blended color spectrum that mimics a typical
-wavelength-of-light representation. The spectrum does not wrap; the first and
-last colors are not blended to each other.
-• "continuous" mode blends the color list's first color and last color at the
-start and end, creating a continuously blended spectrum. This is the default mode.
+
+* "light" mode produces a blended color spectrum that mimics a typical wavelength-of-light representation. The spectrum does not wrap; the first and last colors are not blended with each other.
+
+* "continuous" mode blends the color list's first color and last color at the start and end, creating a continuously blended spectrum. This is the default mode.
+
 This class calculates resultant color values on-the-fly to reduce memory
 consumption with a slight speed performance sacrifice. Use the
 ``n-color_table.Spectrum`` class to improve performance.
