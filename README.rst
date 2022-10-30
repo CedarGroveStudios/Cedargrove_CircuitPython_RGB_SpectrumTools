@@ -23,6 +23,8 @@ color values. Included in the collection are spectral conversion methods for
 grayscale, iron temperature color, stoplight (green-yellow-red), and visible
 light as well as classes for n-color blended light.
 
+.. image:: https://github.com/CedarGroveStudios/CircuitPython_RGB_SpectrumTools/blob/main/media/color_spectrum_test.jpeg
+
 
 Dependencies
 =============
@@ -77,6 +79,7 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
     >>> hex(index_to_rgb(0.5, 1.0))
     '0x8c8c8c'
 
+
 ``iron(index, gamma)``
 
 Translates the normalized index value into a 24-bit RGB integer with gamma
@@ -91,6 +94,7 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
     >>> from cedargrove_rgb_spectrumtools.iron import index_to_rgb
     >>> hex(index_to_rgb(0.5, 1.0))
     '0xff0000'
+
 
 ``stoplight(index, gamma)``
 
@@ -107,6 +111,7 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
     >>> hex(index_to_rgb(0.5, 1.0))
     ‘'0xffff00'
 
+
 ``visible(index, gamma)``
 
 Translates the normalized index value into a 24-bit RGB integer with gamma
@@ -121,6 +126,7 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
     >>> from cedargrove_rgb_spectrumtools.visible import index_to_rgb
     >>> hex(index_to_rgb(0.5, 1.0))
     '0x6dff00'
+
 
 ``n_color(index, gamma)``
 
@@ -152,6 +158,7 @@ consumption with a slight speed performance sacrifice. Use the
     >>> spectrum = Spectrum([0xFF0000, 0xFFFF00, 0x00FF00], mode="light", gamma=0.6)
     >>> print(hex(spectrum.color(index=0.36)))
     0xff9c00
+
 
 ``n_color(index, gamma)``
 
