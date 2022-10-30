@@ -18,7 +18,10 @@ Introduction
     :target: https://github.com/psf/black
     :alt: Code Style: Black
 
-A collection of methods and classes for converting a normalized index to RGB color values.
+A collection of methods and classes for converting a normalized index to RGB
+color values. Included in the collection are spectral conversion methods for
+grayscale, iron temperature color, stoplight (green-yellow-red), and visible
+light as well as classes for n-color blended light.
 
 
 Dependencies
@@ -59,9 +62,110 @@ Or the following command to update an existing version:
 Usage Example
 =============
 
+``grayscale(index, gamma)``
+
+Translates the normalized index value into a 24-bit RGB integer with gamma
+adjustment. The spectral index is a floating point value in the range of 0.0 to
+1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
+(inclusive); default is 0.8, tuned for TFT displays. If the index or gamma
+value is outside of the specified range, the 24-bit RGB output will be limited
+to the minimum (0x0) or maximum (0xFFFFFF) value.
+
 .. code-block:: python
 
-    pass
+    >>> from cedargrove_rgb_spectrumtools.grayscale import index_to_rgb
+    >>> hex(index_to_rgb(0.5, 1.0))
+    '0x8c8c8c'
+
+``iron(index, gamma)``
+
+Translates the normalized index value into a 24-bit RGB integer with gamma
+adjustment. The spectral index is a floating point value in the range of 0.0 to
+1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
+(inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
+value is outside of the specified range, the 24-bit RGB output will be limited
+to the minimum (0x0) or maximum (0xFFFFFF) value.
+
+.. code-block:: python
+
+    >>> from cedargrove_rgb_spectrumtools.iron import index_to_rgb
+    >>> hex(index_to_rgb(0.5, 1.0))
+    '0xff0000'
+
+``stoplight(index, gamma)``
+
+Translates the normalized index value into a 24-bit RGB integer with gamma
+adjustment. The spectral index is a floating point value in the range of 0.0 to
+1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
+(inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
+value is outside of the specified range, the 24-bit RGB output will be limited
+to the minimum (0x0) or maximum (0xFFFFFF) value.
+
+.. code-block:: python
+
+    >>> from cedargrove_rgb_spectrumtools.stoplight import index_to_rgb
+    >>> hex(index_to_rgb(0.5, 1.0))
+    ‘'0xffff00'
+
+``visible(index, gamma)``
+
+Translates the normalized index value into a 24-bit RGB integer with gamma
+adjustment. The spectral index is a floating point value in the range of 0.0 to
+1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
+(inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
+value is outside of the specified range, the 24-bit RGB output will be limited
+to the minimum (0x0) or maximum (0xFFFFFF) value.
+
+.. code-block:: python
+
+    >>> from cedargrove_rgb_spectrumtools.visible import index_to_rgb
+    >>> hex(index_to_rgb(0.5, 1.0))
+    '0x6dff00'
+
+``n_color(index, gamma)``
+
+A class that translates the normalized index value into a 24-bit RGB integer
+with gamma adjustment. The spectral index is a floating point value in the
+range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value can be from
+0.0 to 3.0 (inclusive); default is 0.55, tuned for TFT displays. If the index
+or gamma value is outside of the specified range, the 24-bit RGB output will be
+limited to the minimum (0x0) or maximum (0xFFFFFF) value.
+The class converts a spectrum index value consisting of a positive numeric
+value (0.0 to 1.0, modulus of 1.0) to an RGB color value that representing the
+index position on a graduated and blended multicolor spectrum. The spectrum is
+defined by a list of colors that are proportionally distributed across the spectrum.
+Two spectrum modes are currently supported:
+• "light" mode produces a blended color spectrum that mimics a typical
+wavelength-of-light representation. The spectrum does not wrap; the first and
+last colors are not blended to each other.
+• "continuous" mode blends the color list's first color and last color at the
+start and end, creating a continuously blended spectrum. This is the default mode.
+This class calculates resultant color values on-the-fly to reduce memory
+consumption with a slight speed performance sacrifice. Use the
+``n-color_table.Spectrum`` class to improve performance.
+
+.. code-block:: python
+
+    >>> from cedargrove_rgb_spectrumtools.n_color import Spectrum
+    >>> # Create Red/Yellow/Green light-style spectrum
+    >>> spectrum = Spectrum([0xFF0000, 0xFFFF00, 0x00FF00], mode="light", gamma=0.6)
+    >>> print(hex(spectrum.color(index=0.36)))
+    0xff9c00
+
+``n_color(index, gamma)``
+
+This class functions the same as the ``n_color.Spectrum`` class, calculating
+resultant color values from a pre-compiled internal color list to improve speed
+performance but with increased memory usage. Use the
+``n-color_spectrum.Spectrum`` class to reduce memory usage.
+
+.. code-block:: python
+
+    >>> from cedargrove_rgb_spectrumtools.n_color_table import Spectrum
+    >>> # Create Red/Yellow/Green light-style spectrum
+    >>> spectrum = Spectrum([0xFF0000, 0xFFFF00, 0x00FF00], mode="light", gamma=0.6)
+    >>> print(hex(spectrum.color(index=0.36)))
+        0xff9c00
 
 Documentation
 =============
