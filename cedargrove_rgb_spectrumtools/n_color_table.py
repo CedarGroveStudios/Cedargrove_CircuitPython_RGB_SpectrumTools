@@ -1,5 +1,4 @@
 # SPDX-FileCopyrightText: Copyright (c) 2022 JG for Cedar Grove Maker Studios
-#
 # SPDX-License-Identifier: MIT
 """
 `cedargrove_rgb_spectrumtools.n-color_table`

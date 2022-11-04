@@ -1,5 +1,4 @@
 # SPDX-FileCopyrightText: Copyright (c) 2022 JG for Cedar Grove Maker Studios
-#
 # SPDX-License-Identifier: MIT
 """
 `cedargrove_rgb_spectrumtools.stoplight`
@@ -69,7 +68,6 @@ def index_to_rgb(index=0, gamma=0.5):
 
     band = index * 600  # an arbitrary spectrum band index; 0 to 600
 
-    # if band >= 0 and band < 300:  # green to yellow
     if 0 <= band < 300:  # green to yellow
         red = map_range(band, 0, 300, 0.0, 1) ** gamma
         grn = map_range(band, 0, 300, 0.25, 1) ** gamma
