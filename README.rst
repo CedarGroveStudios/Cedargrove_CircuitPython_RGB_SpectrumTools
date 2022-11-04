@@ -67,9 +67,9 @@ Usage Example
 ``grayscale(index, gamma)``
 
 Translates the normalized index value into a 24-bit RGB integer with gamma
-adjustment. The spectral index is a floating point value in the range of 0.0 to
-1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
-(inclusive); default is 0.8, tuned for TFT displays. If the index or gamma
+visual perception control. The spectral index is a floating point value in the
+range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value can be from 0.0
+to 1.0 (inclusive); default is 0.8, tuned for TFT displays. If the index or gamma
 value is outside of the specified range, the 24-bit RGB output will be limited
 to the minimum (0x0) or maximum (0xFFFFFF) value.
 
@@ -83,9 +83,9 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
 ``iron(index, gamma)``
 
 Translates the normalized index value into a 24-bit RGB integer with gamma
-adjustment. The spectral index is a floating point value in the range of 0.0 to
-1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
-(inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
+visual perception control. The spectral index is a floating point value in the
+range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value can be from 0.0
+to 1.0 (inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
 value is outside of the specified range, the 24-bit RGB output will be limited
 to the minimum (0x0) or maximum (0xFFFFFF) value.
 
@@ -99,9 +99,9 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
 ``stoplight(index, gamma)``
 
 Translates the normalized index value into a 24-bit RGB integer with gamma
-adjustment. The spectral index is a floating point value in the range of 0.0 to
-1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
-(inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
+visual perception control. The spectral index is a floating point value in the
+range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value can be from 0.0
+to 1.0 (inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
 value is outside of the specified range, the 24-bit RGB output will be limited
 to the minimum (0x0) or maximum (0xFFFFFF) value.
 
@@ -115,9 +115,9 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
 ``visible(index, gamma)``
 
 Translates the normalized index value into a 24-bit RGB integer with gamma
-adjustment. The spectral index is a floating point value in the range of 0.0 to
-1.0 (inclusive); default is 0.0. The gamma value can be from 0.0 to 1.0
-(inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
+visual perception control. The spectral index is a floating point value in the
+range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value can be from 0.0
+to 1.0 (inclusive); default is 0.5, tuned for TFT displays. If the index or gamma
 value is outside of the specified range, the 24-bit RGB output will be limited
 to the minimum (0x0) or maximum (0xFFFFFF) value.
 
@@ -131,11 +131,11 @@ to the minimum (0x0) or maximum (0xFFFFFF) value.
 ``n_color(index, gamma)``
 
 A class that translates the normalized index value into a 24-bit RGB integer
-with gamma adjustment. The spectral index is a floating point value in the
-range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value can be from
-0.0 to 3.0 (inclusive); default is 0.55, tuned for TFT displays. If the index
-or gamma value is outside of the specified range, the 24-bit RGB output will be
-limited to the minimum (0x0) or maximum (0xFFFFFF) value.
+with gamma visual perception control. The spectral index is a floating point
+value in the range of 0.0 to 1.0 (inclusive); default is 0.0. The gamma value
+can be from 0.0 to 3.0 (inclusive); default is 0.55, tuned for TFT displays. If
+the index or gamma value is outside of the specified range, the 24-bit RGB
+output will be limited to the minimum (0x0) or maximum (0xFFFFFF) value.
 
 The class converts a spectrum index value consisting of a positive numeric
 value (0.0 to 1.0, modulus of 1.0) to an RGB color value that representing the
