@@ -52,6 +52,7 @@ def map_range(x, in_min, in_max, out_min, out_max):
     return min(max(mapped, out_max), out_min)
 
 
+# pylint: disable = duplicate-code
 class Spectrum:
     """Converts a spectrum index value consisting of a positive numeric value
     (0.0 to 1.0, modulus of 1.0) to an RGB color value that representing the
