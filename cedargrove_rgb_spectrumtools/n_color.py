@@ -23,6 +23,7 @@ __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/CedarGroveStudios/CircuitPython_RGB_SpectrumTools.git"
 
 
+# pylint: disable = duplicate-code
 def map_range(x, in_min, in_max, out_min, out_max):
     """Maps and constrains an input value from one range of values to another.
     (from adafruit_simpleio)

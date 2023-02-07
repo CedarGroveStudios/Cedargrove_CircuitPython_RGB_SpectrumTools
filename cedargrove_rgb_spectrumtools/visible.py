@@ -26,6 +26,7 @@ __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/CedarGroveStudios/CircuitPython_RGB_SpectrumTools.git"
 
 
+# pylint: disable = duplicate-code
 def index_to_rgb(index=0, gamma=0.5):
     """
     Converts a spectral index to rainbow (visible light wavelength)
