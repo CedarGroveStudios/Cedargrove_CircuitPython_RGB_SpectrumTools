@@ -1,4 +1,3 @@
-# pylint: disable = duplicate-code
 # SPDX-FileCopyrightText: Copyright (c) 2022 JG for Cedar Grove Maker Studios
 # SPDX-License-Identifier: MIT
 """
@@ -27,8 +26,8 @@ __version__ = "0.0.0+auto.0"
 __repo__ = "https://github.com/CedarGroveStudios/CircuitPython_RGB_SpectrumTools.git"
 
 
-# pylint: disable = duplicate-code
 def index_to_rgb(index=0, gamma=0.5):
+    # pylint: disable = duplicate-code
     """
     Converts a spectral index to rainbow (visible light wavelength)
     spectrum to an RGB value. Spectral index in range of 0.0 to 1.0
