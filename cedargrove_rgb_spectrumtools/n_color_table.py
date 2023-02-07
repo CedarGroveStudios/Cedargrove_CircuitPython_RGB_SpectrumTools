@@ -92,6 +92,7 @@ class Spectrum:
     """
 
     def __init__(self, colors=None, mode="normal", gamma=0.55):
+        # pylint: disable = duplicate-code
         self._colors = colors
         self._mode = mode
         self._gamma = min(max(gamma, 0), 3.0)
