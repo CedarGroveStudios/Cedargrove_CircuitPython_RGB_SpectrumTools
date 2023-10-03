@@ -160,7 +160,7 @@ consumption with a slight speed performance sacrifice. Use the
     0xff9c00
 
 
-``n_color(index, gamma)``
+``n_color_table(index, gamma)``
 
 This class functions the same as the ``n_color.Spectrum`` class, calculating
 resultant color values from a pre-compiled internal color list to improve speed
