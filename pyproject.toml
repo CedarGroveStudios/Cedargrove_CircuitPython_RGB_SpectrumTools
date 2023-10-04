@@ -11,7 +11,7 @@ requires = [
 ]
 
 [project]
-name = "cedargrove_rgb_spectrumtools"
+name = "cedargrove-circuitpython-rgb-spectrumtools"
 description = "A collection of methods and classes for converting a normalized index to RGB color values."
 version = "0.0.0+auto.0"
 readme = "README.rst"
@@ -40,7 +40,7 @@ dynamic = ["dependencies", "optional-dependencies"]
 [tool.setuptools]
 # TODO: IF LIBRARY FILES ARE A PACKAGE FOLDER,
 #       CHANGE `py_modules = ['...']` TO `packages = ['...']`
-py-modules = ["cedargrove_rgb_spectrumtools"]
+packages = ["cedargrove_rgb_spectrumtools"]
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}
