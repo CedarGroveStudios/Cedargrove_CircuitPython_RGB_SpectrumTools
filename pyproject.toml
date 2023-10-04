@@ -11,7 +11,7 @@ requires = [
 ]
 
 [project]
-name = "cedargrove-circuitpython-rgb-spectrumtools"
+name = "cedargrove_circuitpython_rgb_spectrumtools"
 description = "A collection of methods and classes for converting a normalized index to RGB color values."
 version = "0.0.0+auto.0"
 readme = "README.rst"
